@@ -233,17 +233,17 @@ async function main() {
 main();
 ```
 
-### Open.url([requestLibrary], [url | params], [options])
-This function will return a Promise to the central directory information from a URL point to a zipfile.  Range-headers are used to avoid reading the whole file. Unzipper does not ship with a request library so you will have to provide it as the first option.
+### Open.url([gotLibrary], [url | params], [options])
+This function will return a Promise to the central directory information from a URL point to a zipfile.  Range-headers are used to avoid reading the whole file. Unzipper does not ship with a got library so you will have to provide it as the first option.
 
 Live Example: (extracts a tiny xml file from the middle of a 500MB zipfile)
 
 ```js
-const request = require('request');
+const got = require('got');
 const unzipper = require('./unzip');
 
 async function main() {
-  const directory = await unzipper.Open.url(request,'http://www2.census.gov/geo/tiger/TIGER2015/ZCTA5/tl_2015_us_zcta510.zip');
+  const directory = await unzipper.Open.url(got,'http://www2.census.gov/geo/tiger/TIGER2015/ZCTA5/tl_2015_us_zcta510.zip');
   const file = directory.files.find(d => d.path === 'tl_2015_us_zcta510.shp.iso.xml');
   const content = await file.buffer();
   console.log(content.toString());
@@ -253,27 +253,8 @@ main();
 ```
 
 
-This function takes a second parameter which can either be a string containing the `url` to request, or an `options` object to invoke the supplied `request` library with. This can be used when other request options are required, such as custom headers or authentication to a third party service.
+This function takes a second parameter which can either be a string containing the `url` to got, or an `options` object to invoke the supplied `got` library with. This can be used when other got options are required, such as custom headers or authentication to a third party service.
 
-```js
-const request = require('google-oauth-jwt').requestWithJWT();
-
-const googleStorageOptions = {
-  url: `https://www.googleapis.com/storage/v1/b/m-bucket-name/o/my-object-name`,
-  qs: { alt: 'media' },
-  jwt: {
-      email: google.storage.credentials.client_email,
-      key: google.storage.credentials.private_key,
-      scopes: ['https://www.googleapis.com/auth/devstorage.read_only']
-  }
-});
-
-async function getFile(req, res, next) {
-  const directory = await unzipper.Open.url(request, googleStorageOptions);
-  const file = zip.files.find((file) => file.path === 'my-filename');
-  return file.stream().pipe(res);
-});
-```
 
 ### Open.s3([aws-sdk], [params], [options])
 This function will return a Promise to the central directory information from a zipfile on S3.  Range-headers are used to avoid reading the whole file.    Unzipper does not ship with with the aws-sdk so you have to provide an instantiated client as first arguments.    The params object requires `Bucket` and `Key` to fetch the correct file.

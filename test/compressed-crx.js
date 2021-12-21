@@ -40,7 +40,7 @@ test('parse/extract crx archive', function (t) {
 test('open methods', function(t) {
   var archive = path.join(__dirname, '../testData/compressed-standard-crx/archive.crx');
   var buffer = fs.readFileSync(archive);
-  var request = require('request');
+  var got = require('got');
   var AWS = require('aws-sdk');
   var s3 = new AWS.S3({region: 'us-east-1'});
 
@@ -56,7 +56,7 @@ test('open methods', function(t) {
   var tests = [
     {name: 'buffer',args: [buffer]},
     {name: 'file', args: [archive]},
-    {name: 'url', args: [request, 'https://s3.amazonaws.com/unzipper/archive.crx']},
+    {name: 'url', args: [got, 'https://s3.amazonaws.com/unzipper/archive.crx']},
     {name: 's3', args: [s3, { Bucket: 'unzipper', Key: 'archive.crx'}]}
   ];
 

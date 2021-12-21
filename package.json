@@ -37,8 +37,8 @@
   "devDependencies": {
     "aws-sdk": "^2.77.0",
     "dirdiff": ">= 0.0.1 < 1",
+    "got": "^11.8.1",
     "iconv-lite": "^0.4.24",
-    "request": "^2.88.0",
     "stream-buffers": ">= 0.2.5 < 1",
     "tap": ">= 0.3.0 < 1",
     "temp": ">= 0.4.0 < 1"
