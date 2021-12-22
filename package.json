@@ -1,6 +1,6 @@
 {
   "name": "@guihash/unzipper",
-  "version": "0.10.12",
+  "version": "1.0.0",
   "description": "Unzip cross-platform streaming API ",
   "author": "Guillaume Hertault <guihash@guillaumehertault.fr>",
   "contributors": [
