@@ -1,9 +1,13 @@
 {
-  "name": "unzipper",
+  "name": "@guihash/unzipper",
   "version": "0.10.12",
   "description": "Unzip cross-platform streaming API ",
-  "author": "Evan Oxfeld <eoxfeld@gmail.com>",
+  "author": "Guillaume Hertault <guihash@guillaumehertault.fr>",
   "contributors": [
+    {
+      "name": "Guillaume Hertault",
+      "email": "guihash@guillaumehertault.fr"
+    },
     {
       "name": "Ziggy Jonsson",
       "email": "ziggy.jonsson.nyc@gmail.com"
@@ -17,9 +21,12 @@
       "email": "joe.ferner@nearinfinity.com"
     }
   ],
+  "engines": {
+    "node": ">=10"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ZJONSSON/node-unzipper.git"
+    "url": "https://github.com/GuiHash/node-unzipper.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -50,7 +57,8 @@
     "uncompress",
     "archive",
     "stream",
-    "extract"
+    "extract",
+    "got"
   ],
   "main": "unzip.js",
   "scripts": {

@@ -14,7 +14,12 @@
 
 # unzipper
 
-This is an active fork and drop-in replacement of the [node-unzip](https://github.com/EvanOxfeld/node-unzip) and addresses the following issues:
+This is an active fork  and drop-in replacement of the [node-unzipper](https://github.com/ZJONSSON/node-unzipper) and addresses the following issues:
+* use got instead of request
+* drop node 8 support
+* use stream.destroy (if available) instead of deprecated stream.abort
+
+[node-unzipper](https://github.com/ZJONSSON/node-unzipper) is a fork and drop-in replacement of the [node-unzip](https://github.com/EvanOxfeld/node-unzip) and addresses the following issues:
 * finish/close events are not always triggered, particular when the input stream is slower than the receivers
 * Any files are buffered into memory before passing on to entry
 
