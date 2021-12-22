@@ -1,23 +1,18 @@
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-[![Test Coverage][travis-image]][travis-url]
-[![Coverage][coverage-image]][coverage-url]
 
-[npm-image]: https://img.shields.io/npm/v/unzipper.svg
-[npm-url]: https://npmjs.org/package/unzipper
-[travis-image]: https://api.travis-ci.org/ZJONSSON/node-unzipper.png?branch=master
-[travis-url]: https://travis-ci.org/ZJONSSON/node-unzipper?branch=master
-[downloads-image]: https://img.shields.io/npm/dm/unzipper.svg
-[downloads-url]: https://npmjs.org/package/unzipper
-[coverage-image]: https://3tjjj5abqi.execute-api.us-east-1.amazonaws.com/prod/node-unzipper/badge
-[coverage-url]: https://3tjjj5abqi.execute-api.us-east-1.amazonaws.com/prod/node-unzipper/url
+[npm-image]: https://img.shields.io/npm/v/@guihash/unzipper.svg
+[npm-url]: https://npmjs.org/package/@guihash/unzipper
+[downloads-image]: https://img.shields.io/npm/dm/@guihash/unzipper.svg
+[downloads-url]: https://npmjs.org/package/@guihash/unzipper
 
 # unzipper
 
 This is an active fork  and drop-in replacement of the [node-unzipper](https://github.com/ZJONSSON/node-unzipper) and addresses the following issues:
-* use got instead of request
+* use got instead of request for `Open.url` method
 * drop node 8 support
-* use stream.destroy (if available) instead of deprecated stream.abort
+* use `stream.destroy` (if available) instead of deprecated `stream.abort`
+* publish new method `Open.custom`
 
 [node-unzipper](https://github.com/ZJONSSON/node-unzipper) is a fork and drop-in replacement of the [node-unzip](https://github.com/EvanOxfeld/node-unzip) and addresses the following issues:
 * finish/close events are not always triggered, particular when the input stream is slower than the receivers
@@ -37,7 +32,7 @@ Chrome extension files (.crx) are zipfiles with an [extra header](http://www.ada
 ## Installation
 
 ```bash
-$ npm install unzipper
+$ npm install @guihash/unzipper
 ```
 
 ## Quick Examples
